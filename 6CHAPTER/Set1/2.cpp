@@ -2,12 +2,12 @@
 using namespace std;
 
 int main() {
-    int n = 1, m = n & 0;
-    do {
-        m++;
-        if (m > 1)
-            n = m;
-    } while (n < 3);
-    cout << m << endl;
+    int i = 12;
+    float f = -1.0;
+    while (i < 0) {
+        f = f + 5.0 * f / -5; 
+        --i;
+    }
+    cout << i << endl;
     return 0;
 }

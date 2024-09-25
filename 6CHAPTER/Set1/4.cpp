@@ -1,10 +1,14 @@
 #include <iostream>
 using namespace std;
 
+int doit(int n, int t = 2) {
+    int x = n;
+    while (t >>= 1)
+        x++;
+    return x;
+}
+
 int main() {
-    int a, b = 2 | 5;
-    for (a = 0; a < 3; a += 2)
-        b++;
-    cout << b << endl;
+    cout << doit(2, 4) << doit(6) << endl;
     return 0;
 }
