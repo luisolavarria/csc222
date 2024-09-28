@@ -4,7 +4,7 @@ CHARACTER TYPES                  char                           1 byte (at least
                                 char32_t                        at least 32 bits                             supports even larger character sets
                                 wchar_t                         Varies                                       represents the largest supported character set
 INTEGER TYPES                   signed char                     same size as char, at least 8 bits           can represent negative values
-                                signed short int                at least 16 bits                             abbreviations: signed short, short int, or short
+                                signed short int                at least 16 bits                             abbreviations: signed short,                                 short int, or short
                                 signed int                      at least 16 bits                             abbreviations: int
                                 signed long int                 at least 16 bits                             abbreviations: long int, long
                                 signed long long int            at least 16 bits                             abbreviations: long long int, long long
