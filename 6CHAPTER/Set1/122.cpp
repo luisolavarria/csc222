@@ -15,7 +15,7 @@ void f(int n) {
 
 int main() {
     char x = 3;
-    f(0);
+    f(14);
     cout << endl;
     return 0;
 }
