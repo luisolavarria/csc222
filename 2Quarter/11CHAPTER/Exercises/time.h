@@ -1,4 +1,5 @@
 #include <string>
 #include <vector>
-#include "pairs_utils.h"
 using namespace std;
+
+vector<int> test_time(vector<int> x);
