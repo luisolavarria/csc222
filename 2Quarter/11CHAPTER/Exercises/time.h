@@ -2,4 +2,8 @@
 #include <vector>
 using namespace std;
 
-vector<int> test_time(vector<int> x);
+struct time{
+int x;
+int y;
+int z;
+}
