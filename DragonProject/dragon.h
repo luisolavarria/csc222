@@ -1,17 +1,18 @@
-#include <iostream>
+#ifndef DRAGON_H
+#define DRAGON_H
 
+#include <string> // Ensure this is included for std::string
 
-struct dragon{
-
+struct dragon {
     std::string name;
     int size;
     int horns;
-    dragon(string x, int y, int z);
 
-    string battle_test(int mp, float strenght);//mp stands for mafgical power
+    // Constructor declaration
+    dragon(std::string x, int y, int z);
 
+    // Function declaration
+    std::string battle_test(int mp, float strength);
+};
 
-
-
- 
-}
+#endif // DRAGON_H
