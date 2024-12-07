@@ -7,11 +7,13 @@ dragon::dragon(std::string x, int y, int z) {
 }
 
 std::string dragon::battle_test(int mp, float base_strength) {
-    float total_strength = base_strength + size * 0.5 + horns * 0.2; // Strength is affected by size and horns
+    // Calculate total strength based on size, horns, and base strength
+    float total_strength = base_strength + size * 0.1f + horns * 0.5f; // Adjust these values as needed
 
+    // Check if the dragon passes the test
     if (mp > 50 && total_strength > 10.0) {
-        return " is strong!";
+        return name + " is strong!";
     } else {
-        return " is not ready for battle.";
+        return name + " is not ready for battle.";
     }
 }
