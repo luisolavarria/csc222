@@ -21,6 +21,6 @@ Fraction::Fraction(string fraction) {
     denominator = stoi(fraction);
 }
 
-std::string Fraction::toString() {
+std::string Fraction::to_string() {
     return ::to_string(numerator) + "/" + ::to_string(denominator);
 }
