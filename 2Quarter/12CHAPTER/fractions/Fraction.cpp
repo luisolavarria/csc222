@@ -14,6 +14,13 @@ Fraction::Fraction(int numerator, int denominator) {
     this->denominator = denominator;
 }
 
+Fraction::Fraction(string fraction) {
+    string divisor = "/";
+    numerator = stoi(fraction.substr(0, fraction.find(divisor)));
+    fraction.erase(0, fraction.find(divisor) + divisor.length());
+    denominator = stoi(fraction);
+}
+
 std::string Fraction::toString() {
     return ::to_string(numerator) + "/" + ::to_string(denominator);
 }
