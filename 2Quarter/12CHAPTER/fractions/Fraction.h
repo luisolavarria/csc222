@@ -11,7 +11,9 @@ struct Fraction {
 	Fraction();
 	Fraction(int, int);
 	Fraction(string);
-	std::string to_string();
-	
+	std::string toString();
+
+
 };
+
 int gcd(int, int);
