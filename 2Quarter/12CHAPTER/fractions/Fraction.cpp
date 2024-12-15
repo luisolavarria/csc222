@@ -24,3 +24,6 @@ Fraction::Fraction(string fraction) {
 std::string Fraction::to_string() {
     return ::to_string(numerator) + "/" + ::to_string(denominator);
 }
+
+
+
