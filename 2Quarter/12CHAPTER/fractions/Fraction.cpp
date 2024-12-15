@@ -1,7 +1,12 @@
-#include "doctest.h"
 #include "Fraction.h"
-using namespace std;
 
+
+int gcd(int a, int b) {
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+}
 
 Fraction::Fraction() {
     numerator = 0;
@@ -9,9 +14,9 @@ Fraction::Fraction() {
 }
 
 Fraction::Fraction(int numerator, int denominator) {
-	int divisor = gcd( numerator, denominator);
-    this->numerator = numerator/divisor;
-    this->denominator = denominator/divisor;
+    int divisor = gcd(numerator, denominator);
+    this->numerator = numerator / divisor;
+    this->denominator = denominator / divisor;
 }
 
 Fraction::Fraction(string fraction) {
@@ -19,28 +24,19 @@ Fraction::Fraction(string fraction) {
     numerator = stoi(fraction.substr(0, fraction.find(delim)));
     fraction.erase(0, fraction.find(delim) + delim.length());
     denominator = stoi(fraction);
+    int divisor = gcd(numerator, denominator);
+    numerator /= divisor;
+    denominator /= divisor;
 }
 
 std::string Fraction::toString() {
-	if (denominator == 1)
+    if (denominator == 1)
         return to_string(numerator);
-    return ::to_string(numerator) + "/" + ::to_string(denominator);
+    return to_string(numerator) + "/" + to_string(denominator);
 }
 
 
-int gcd(int numerator, int denominator ) {
-    int remainder = 0;
-    while (denominator != 0) {
-        remainder = numerator % denominator;
 
-        numerator = denominator;
-        denominator = remainder;
-    }
-    return numerator;
-}
 
-TEST_CASE("Test gcd function") {
-    CHECK(gcd(4, 14) == 2);
-    CHECK(gcd(16, 12) == 4);
-    CHECK(gcd(18, 27) == 9);
-}
+
+

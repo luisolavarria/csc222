@@ -1,4 +1,4 @@
-	#pragma once
+#pragma once
 #include <string>
 using namespace std;
 
@@ -16,4 +16,4 @@ struct Fraction {
 
 };
 
-int gcd(int, int);
+int gcd(int a, int b);
