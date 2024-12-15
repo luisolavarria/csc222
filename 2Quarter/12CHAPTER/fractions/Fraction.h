@@ -12,6 +12,7 @@ struct Fraction {
 	Fraction(int, int);
 	Fraction(string);
 	std::string toString();
+	Fraction(int);
 
 
 };

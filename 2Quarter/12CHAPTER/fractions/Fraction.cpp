@@ -34,6 +34,10 @@ std::string Fraction::toString() {
         return to_string(numerator);
     return to_string(numerator) + "/" + to_string(denominator);
 }
+Fraction::Fraction(int x){
+    numerator = x;
+    denominator = 1;
+}
 
 
 
