@@ -1,20 +1,20 @@
-#pragma once
-#include <string>
-using namespace std;
+	#pragma once
+	#include <string>
+	using namespace std;
 
 
-struct Fraction {
+	struct Fraction {
 
-	int numerator;
-	int denominator;
+		int numerator;
+		int denominator;
 
-	Fraction();
-	Fraction(int, int);
-	Fraction(string);
-	std::string toString();
-	Fraction(int);
+		Fraction();
+		Fraction(int, int);
+		Fraction(string);
+		std::string toString();
+		Fraction(int);
 
 
-};
+	};
 
-int gcd(int a, int b);
+	int gcd(int a, int b);

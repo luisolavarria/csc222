@@ -20,13 +20,16 @@ Fraction::Fraction(int numerator, int denominator) {
 }
 
 Fraction::Fraction(string fraction) {
-    string delim = "/";
-    numerator = stoi(fraction.substr(0, fraction.find(delim)));
-    fraction.erase(0, fraction.find(delim) + delim.length());
-    denominator = stoi(fraction);
-    int divisor = gcd(numerator, denominator);
-    numerator /= divisor;
-    denominator /= divisor;
+ string delim = "/";
+    if (fraction.find(delim) != string::npos) {  
+        numerator = stoi(fraction.substr(0, fraction.find(delim)));
+        fraction.erase(0, fraction.find(delim) + delim.length());
+        denominator = stoi(fraction);
+    } else {  
+        numerator = stoi(fraction);
+          //stoi converts strings to ints.
+        denominator = 1;
+        }
 }
 
 std::string Fraction::toString() {
