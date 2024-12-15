@@ -17,6 +17,7 @@ Fraction::Fraction(int numerator, int denominator) {
     int divisor = gcd(numerator, denominator);
     this->numerator = numerator / divisor;
     this->denominator = denominator / divisor;
+    
 }
 
 Fraction::Fraction(string fraction) {
@@ -42,8 +43,29 @@ Fraction::Fraction(int x){
     denominator = 1;
 }
 
+bool Fraction::operator==(const Fraction& x) const {
+    return numerator * x.denominator == x.numerator * denominator;
+}
 
+bool Fraction::operator!=(const Fraction& x) const {
+    return !(*this == x);
+}
 
+bool Fraction::operator<(const Fraction& x) const {
+    return numerator * x.denominator < x.numerator * denominator;
+}
+
+bool Fraction::operator>(const Fraction& x) const {
+    return x < *this;
+}
+
+bool Fraction::operator<=(const Fraction& x) const {
+    return !(*this > x);
+}
+
+bool Fraction::operator>=(const Fraction& x) const {
+    return !(*this < x);
+}
 
 
 

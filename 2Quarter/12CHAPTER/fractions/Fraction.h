@@ -13,8 +13,14 @@
 		Fraction(string);
 		std::string toString();
 		Fraction(int);
+		
 
-
-	};
+  bool operator==(const Fraction& x) const;
+    bool operator!=(const Fraction& x) const;
+    bool operator<(const Fraction& x) const;
+    bool operator>(const Fraction& x) const;
+    bool operator<=(const Fraction& x) const;
+    bool operator>=(const Fraction& x) const;
+};
 
 	int gcd(int a, int b);
