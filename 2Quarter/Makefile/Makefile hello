@@ -1,4 +1,4 @@
-hello: hello.a
+hello: hello.a  #dependency
 	echo " World"
 		echo "This line will print if the file hello does not exist."
 hello.a:
