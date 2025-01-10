@@ -1,11 +1,22 @@
-all: one two three
+hey: one two
+	
+	echo $@
+
+	
+	echo $?
+
+	
+	echo $^
+
+	echo $<
+
+	touch hey
 
 one:
 	touch one
+
 two:
 	touch two
-three:
-	touch three
 
 clean:
-	rm -f one two three
+	rm -f hey one two
