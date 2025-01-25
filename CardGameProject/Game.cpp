@@ -40,3 +40,29 @@ void Game::playRound() {
     }
 }
 
+
+void Game::displayScores() const {
+    cout << "Current Scores:" << endl;
+    cout << "Player: " << playerScore << endl;
+    cout << "Computer: " << computerScore << endl;
+}
+
+
+bool Game::isGameOver() const {
+    return deck.isEmpty();
+}
+
+
+void Game::determineWinner() const {
+    cout << "\nFinal Scores:" << endl;
+    cout << "Player: " << playerScore << endl;
+    cout << "Computer: " << computerScore << endl;
+
+    if (playerScore > computerScore) {
+        cout << "Congratulations! You win!" << endl;
+    } else if (playerScore < computerScore) {
+        cout << "The computer wins! Better luck next time!" << endl;
+    } else {
+        cout << "It's a tie!" << endl;
+    }
+}
