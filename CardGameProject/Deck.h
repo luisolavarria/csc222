@@ -6,18 +6,17 @@
 
 class Deck {
 private:
-    std::vector<Card> cards;
-    int currentCardIndex;    
-
+    std::vector<Card> cards; 
+    int currentCardIndex;   
 public:
     
     Deck();
 
    
-    void shuffle();               
+    void shuffle();              
     Card deal();                 
     bool isEmpty() const;         
-    void displayDeck() const;   
+    void displayDeck() const;     
 };
 
 #endif
