@@ -1,25 +1,42 @@
 #include "Game.h"
 #include <iostream>
+using namespace std;
 
-Game::Game() {
-    Deck deck;
+
+Game::Game() : playerScore(0), computerScore(0) {}
+
+
+void Game::initializeGame() {
     deck.shuffle();
+    cout << "The deck has been shuffled. Let's start the game!" << endl;
+}
 
-    for(int i = 0; i < 26; ++i) {
-        player1.push(deck.deal());
-        player2.push(deck.deal());
+
+void Game::playRound() {
+    if (deck.isEmpty()) {
+        cout << "No more cards in the deck. The game is over!" << endl;
+        return;
     }
-}
-void Game::start() {
-    while (!player1.empty() && !player2.empty()){
-        Card card1 = player1.front(); player1.pop();
-        Card card2 = player2.front(); player2.pop();
-        if (card1.getRank() >card2.getRank()){
-            std::cout << "Player 1 wins this round.\n";
-    } else if (card1.getRank() <card2.getRank()){
-        std::cout<< "Player 2 wins this round.\n";
+
+  
+    Card playerCard = deck.deal();
+    Card computerCard = deck.deal();
+
+   
+    cout << "Player's card: ";
+    playerCard.display();
+    cout << "Computer's card: ";
+    computerCard.display();
+
+   
+    if (playerCard.getRank() > computerCard.getRank()) {
+        cout << "Player wins this round!" << endl;
+        playerScore++;
+    } else if (playerCard.getRank() < computerCard.getRank()) {
+        cout << "Computer wins this round!" << endl;
+        computerScore++;
     } else {
-        std::cout<< "It's a Tie!\n";
-    }
+        cout << "It's a tie!" << endl;
     }
 }
+
