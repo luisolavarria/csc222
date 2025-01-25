@@ -20,3 +20,13 @@ int main() {
         cin >> choice;
 
        
+        if (choice != 'y' && choice != 'Y') {
+            break;
+        }
+    }
+
+  
+    game.determineWinner();
+
+    return 0;
+}
