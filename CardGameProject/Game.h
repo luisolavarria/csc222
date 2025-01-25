@@ -14,3 +14,12 @@ public:
     Game();
 
   
+    void initializeGame();    
+    void playRound();        
+    void displayScores() const; 
+    bool isGameOver() const;  
+    void determineWinner() const; 
+};
+
+#endif
+game.h
