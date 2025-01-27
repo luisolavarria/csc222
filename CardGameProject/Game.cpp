@@ -57,6 +57,35 @@ void Game::displayHand() cont {
         }
         dealToHand();
         displayHand();
-        Card playerCard = chooseCard
+        Card playerCard = chooseCard();
+        Card computerCard = deck.deal();
+        computerCard.display();
+        if (playerCard.getRank() >computerCard.getRank()) {
+            cout << "Player wins the round!" << endl;
+            playerScore++;
+        } else if (playerCard.getRank() < computerCard.getRank()) {
+            cout << "Computer wins the round!" << endl;
+        } else {
+            cout << "Its a Tie!" << endl;
+        }
     }
-    
+    void Game:: displayScores () const {
+        cout << "Current Scores:" << endl;
+        cout << "Player: " << playerScore << endl;
+        cout << "Computer: " << computerScore << endl;
+    }
+    bool Game:: isGameOver() const{
+        return deck.isEmpty();
+    }
+    void Game::determineWinner() const {
+        cout << "\nFinal Scores:" << endl;
+        cout << "Player: " << playerScore << endl;
+        cout << "Computer: " << computerScore << endl;
+        if (playerScore > computerScore) {
+            cout << "Congratuations! You Win!" << endl;
+        } else if (playerScore < computerScore) {
+            cout << "The Computer wins! Better luck next time"<< endl;}
+            else if{
+                cout << "It's a Tie!" << endl;
+            }
+    }
