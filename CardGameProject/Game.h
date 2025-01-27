@@ -2,12 +2,17 @@
 #define GAME_H
 
 #include "Deck.h"
+#include <vector>
 
 class Game {
 private:
-    Deck deck;            
+    Deck deck;        
+    std ::vector<Card> playerHand;    
     int playerScore;       
     int computerScore;      
+    void dealToHand();
+    void displayHand() const;
+    Card chooseCard();
 
 public:
    
