@@ -8,5 +8,4 @@ $(TARGET): $(OBJS)
 $(CXX) $(CXXFLAGS) -o $(TARGETS) $(OBJS)
 %.o: %.cpp
 $(CXX) $(CXXFLAGS) -c $<
-clean:
-rm -f $(OBJS) $(TARGET)
+clean:rm -f $(OBJS) $(TARGET)

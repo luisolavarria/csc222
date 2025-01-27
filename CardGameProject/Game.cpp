@@ -1,5 +1,7 @@
 #include "Game.h"
 #include <iostream>
+using namespace std;
+Game::Game() : playerScore(0), computerScore(0){}
 
 Game::Game() {
     Deck deck;
@@ -23,3 +25,21 @@ void Game::start() {
     }
     }
 }
+void Game::dealToHand() {
+    playerHand.clear();
+    for (int i = 0; i < 4; ++i) {
+        if (!deck.isEmpty()){
+            playerHand.push_back(deck.deal());
+
+        }
+    }
+    
+}
+void Game::displayHand() cont {
+    cout << "Your Hand:" << endl;
+    for (size_t i = 0; i< playerHand.size(); ++i){
+        cout << i + 1 << ". ";
+        playerHand[i].display();
+    }
+}
+    Card Game:: c
