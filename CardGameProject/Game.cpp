@@ -12,19 +12,11 @@ Game::Game() {
         player2.push(deck.deal());
     }
 }
-void Game::start() {
-    while (!player1.empty() && !player2.empty()){
-        Card card1 = player1.front(); player1.pop();
-        Card card2 = player2.front(); player2.pop();
-        if (card1.getRank() >card2.getRank()){
-            std::cout << "Player 1 wins this round.\n";
-    } else if (card1.getRank() <card2.getRank()){
-        std::cout<< "Player 2 wins this round.\n";
-    } else {
-        std::cout<< "It's a Tie!\n";
-    }
-    }
+void Game:: initializeGame(){
+    deck.shuffle();
+    cout<< "The Deck has been shuffled. Let's start the Game!"<< endl;
 }
+
 void Game::dealToHand() {
     playerHand.clear();
     for (int i = 0; i < 4; ++i) {
@@ -42,4 +34,29 @@ void Game::displayHand() cont {
         playerHand[i].display();
     }
 }
-    Card Game:: c
+    Card Game:: chooseCard(){
+        int choice = 0;
+        while(true) {
+            cout << "Choose a card to play (1-"<< playerHand.size()<< "): ";
+            cin >> choice;
+            if (choice >=1 && choice <= static_cast<int>(playerHand.size())) {
+                break; }
+                else {
+                    cout << "You don't have that card" << endl;
+                
+                }
+            }
+        Card selectedCard = playerHand[choice - 1];
+        playerHand.erase(playerHand.begin () + (choice-1));
+        return selectedCard
+        }
+    void Game:: playRound() {
+        if(deck.isEmpty()) {
+            cout << "No more cards left! The Game is over"<< endl;
+            return;
+        }
+        dealToHand();
+        displayHand();
+        Card playerCard = chooseCard
+    }
+    
