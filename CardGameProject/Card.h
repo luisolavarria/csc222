@@ -1,14 +1,16 @@
 #ifdef CARD_H
 #define CARD_H
+#include <iostream>
+#include <string>
 
 class Card{
     private:
-    int rankl;
+    int rank;
     int suit;
     public:
-    Card(int r = 0, int s = 0);
+    Card(int r = 0, std::string s = "");
     void display() const;
     int getRank() const;
-    int getSuit() const;
+    std::string getSuit() const;
 };
 #endif
