@@ -1,43 +1,31 @@
 #include "Deck.h"
-#include <algorithm> 
-#include <random>    
-#include <iostream>
-using namespace std;
+#include <algorithm>
+#include <random>
+#include <ctime>
 
-
-Deck::Deck() : currentCardIndex(0) {
-    for (int suit = 0; suit < 4; ++suit) {     
-        for (int rank = 2; rank <= 14; ++rank) { 
-            cards.emplace_back(rank, suit);   
+Deck::Deck() {
+    std::string suits[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
+    for (const auto& suit : suits) {
+        for (int rank = 2; rank <= 14; ++rank) {
+            cards.emplace_back(rank, suit);
         }
     }
 }
 
-
 void Deck::shuffle() {
-    random_device rd;                       
-    mt19937 g(rd());                       
-    std::shuffle(cards.begin(), cards.end(), g);
-    currentCardIndex = 0;                     
+    std::srand(std::time(0));
+    std::random_shuffle(cards.begin(), cards.end());
 }
-
 
 Card Deck::deal() {
-    if (!isEmpty()) {
-        return cards[currentCardIndex++];     
-    } else {
-        throw runtime_error("No more cards in the deck!");
+    if (!cards.empty()) {
+        Card dealtCard = cards.back();
+        cards.pop_back();
+        return dealtCard;
     }
+    return Card();  // Return an empty card if the deck is empty
 }
-
 
 bool Deck::isEmpty() const {
-    return currentCardIndex >= cards.size();
-}
-
-
-void Deck::displayDeck() const {
-    for (const auto& card : cards) {
-        card.display();
-    }
+    return cards.empty();
 }
