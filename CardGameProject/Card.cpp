@@ -3,7 +3,7 @@
 using namespace std;
 
 
-Card::Card(int r, int s) : rank(r), suit(s) {}
+Card::Card(int r, std::string s) : rank(r), suit(s) {}
 
 
 int Card::getRank() const {
@@ -11,32 +11,21 @@ int Card::getRank() const {
 }
 
 
-int Card::getSuit() const {
+std::string Card::getSuit() const {
     return suit;
 }
 
-string Card::rankToString() const {
+string Card::display() const {
+    std::string rankStr; 
     switch (rank) {
-        case 11: return "Jack";
-        case 12: return "Queen";
-        case 13: return "King";
-        case 14: return "Ace";
-        default: return to_string(rank);
+        case 11: rankStr = "Jack"; break;
+        case 12: rankStr = "Queen"; break;
+        case 13: rankStr = "King"; break;
+        case 14: rankStr = "Ace"; break;
+        default: rankStr = std::to_string(rank); break;
     }
+     cout << rankStr() << " of " << suit() << endl;
 }
 
 
-string Card::suitToString() const {
-    switch (suit) {
-        case 0: return "Hearts";
-        case 1: return "Diamonds";
-        case 2: return "Clubs";
-        case 3: return "Spades";
-        default: return "Unknown";
-    }
-}
 
-
-void Card::display() const {
-    cout << rankToString() << " of " << suitToString() << endl;
-}

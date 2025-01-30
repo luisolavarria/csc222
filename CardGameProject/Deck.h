@@ -7,13 +7,13 @@
 class Game {
 private:
     Deck deck;            
-    std::vector<Card> playerHand; // Player's hand of cards
+    std::vector<Card> playerHand; 
     int playerScore;       
     int computerScore;      
 
-    void dealToHand();     // Deals cards to the player's hand
-    void displayHand() const; // Displays the player's hand
-    Card chooseCard();     // Allows the player to choose a card
+    void dealToHand();   
+    void displayHand() const;
+    Card chooseCard();     
 
 public:
     Game();
