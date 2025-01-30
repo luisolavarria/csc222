@@ -1,28 +1,24 @@
-#ifndef GAME_H
-#define GAME_H
+#ifndef DECK_H
+#define DECK_H
 
-#include "Deck.h"
+#include "Card.h"
 #include <vector>
+#include <algorithm>
 
-class Game {
+class Deck {
 private:
-    Deck deck;            
-    std::vector<Card> playerHand; 
-    int playerScore;       
-    int computerScore;      
-
-    void dealToHand();   
-    void displayHand() const;
-    Card chooseCard();     
+      std::vector<Card> cards; 
+    std::vector<Card> playerHand;
 
 public:
-    Game();
+    Deck();
 
-    void initializeGame();    
-    void playRound();        
-    void displayScores() const; 
-    bool isGameOver() const;  
-    void determineWinner() const; 
+   void shuffle(); 
+    Card deal();  
+    bool isEmpty() const;
+    void drawHand();  
+    void displayHand() const; 
+    Card chooseCard(); 
 };
 
 #endif

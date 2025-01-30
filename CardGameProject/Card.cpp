@@ -1,22 +1,17 @@
 #include "Card.h"
-#include <iostream>
-using namespace std;
-
 
 Card::Card(int r, std::string s) : rank(r), suit(s) {}
-
 
 int Card::getRank() const {
     return rank;
 }
 
-
 std::string Card::getSuit() const {
     return suit;
 }
 
-string Card::display() const {
-    std::string rankStr; 
+void Card::display() const {
+    std::string rankStr;
     switch (rank) {
         case 11: rankStr = "Jack"; break;
         case 12: rankStr = "Queen"; break;
@@ -24,8 +19,5 @@ string Card::display() const {
         case 14: rankStr = "Ace"; break;
         default: rankStr = std::to_string(rank); break;
     }
-     cout << rankStr() << " of " << suit() << endl;
+    std::cout << rankStr << " of " << suit << std::endl;
 }
-
-
-
