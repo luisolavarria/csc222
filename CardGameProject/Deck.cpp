@@ -23,7 +23,7 @@ Card Deck::deal() {
         cards.pop_back();
         return dealtCard;
     }
-    return Card();  // Return an empty card if the deck is empty
+    return Card(); 
 }
 
 bool Deck::isEmpty() const {
