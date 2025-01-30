@@ -7,12 +7,10 @@
 class Game {
 private:
     Deck deck;        
-    std ::vector<Card> playerHand;    
+    
     int playerScore;       
     int computerScore;      
-    void dealToHand();
-    void displayHand() const;
-    Card chooseCard();
+  
 
 public:
    
